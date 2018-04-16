@@ -1,0 +1,43 @@
+#header{
+  border-bottom: 3px solid #1db954;
+}
+#output{
+  color: #1db954;
+}
+#input{
+  color: rgba(29, 185, 84, 0.7);
+}
+.button{
+  color: #1db954;
+}
+#container{
+  background: #2b164c;
+}
+#menuopen{
+  color: #1db954;
+}
+#menuclose{
+  color: #2b164c;
+}
+#menucontent{
+  color: #2b164c;
+  background: #1db954;
+}
+input:checked + .slider {
+  background-color: #1db954;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #1db954;
+}
+.slider:before {
+ background-color: #2b164c;
+}
+.slider {
+ background-color: #1db954;
+}
+.dark{
+  display:inline !important;
+}
+.light, .white{
+  display:none !important;
+}

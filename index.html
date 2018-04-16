@@ -1,7 +1,89 @@
 <html>
 <head>
+  <title>KONKRET | Minimal Apps for Android</title>
+  <meta name="description" content="KONKRET is developing open source productivity apps, so good looking Apple users wish they bought an Android phone!">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+  <style>
+    body{
+      background: #131313;
+      color: white;
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 300;
+      font-size: 22px;
+    }
+    #container{
+      width: 90%;
+      padding: 36px 5%;
+      text-align: center;
+    }
+    #logo{
+      width: 100%;
+      max-width: 200px;
+      margin: 12px auto;
+    }
+    #logo img{
+      width: 100%;
+      height: auto;
+    }
+    #logotext{
+      font-size: 63px;
+      letter-spacing: 4px;
+      margin: 12px auto;
+      text-transform: uppercase;
+      font-weight: 100;
+    }
+    #content, #links{
+      margin: 12px auto;
+      width: 100%;
+      max-width: 660px;
+      line-height: 1.4em;
+    }
+    #links a{
+      text-decoration: none;
+      color: white;
+      font-weight: 400;
+      border-bottom: 2px white solid;
+    }
+    @media only screen and (max-width: 600px){
+      body{
+        font-size: 18px;
+      }
+      #logotext{
+        font-size: 43px;
+      }
+      #logo{
+        max-width: 140px;
+      }
+    }
+    @media only screen and (max-height: 600px){
+      body{
+        font-size: 18px;
+      }
+      #logotext{
+        font-size: 43px;
+      }
+      #logo{
+        max-width: 140px;
+      }
+    }
+  </style>
 </head>
 <body>
-Hello World, its KONKRET!
+  <div id="container">
+    <div id="logo">
+      <img src="img/logo.png" alt="logo">
+    </div>
+    <div id="logotext">
+      Konkret
+    </div>
+    <div id="content">
+      KONKRET is developing open source productivity apps, based on web technology, so good looking, Apple users wish they bought an Android phone!
+    </div>
+    <div id="links">
+      <a href="projects/kalk/index.html" target="_blank">KALK Calulator</a> | <a href="projects/luna/index.html" target="_blank">LUNA Moonphases</a> | <a href="https://github.com/konkretapps" target="_blank">Github</a> | <a href="https://qitan.blog" target="_blank">Blog</a>
+    </div>
+  </div>
 </body>
 </html>

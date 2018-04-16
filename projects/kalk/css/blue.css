@@ -1,0 +1,43 @@
+#header{
+  border-bottom:  2px solid white;
+}
+#output{
+  color: white !important;
+}
+#input{
+  color: rgba(255,255,255,0.7);
+}
+.button{
+  color: white;
+}
+#container{
+  background: #282e82;
+}
+#menuopen{
+  color: white;
+}
+#menuclose{
+  color: #282e82;
+}
+#menucontent{
+  color: #282e82;
+  background: white;
+}
+input:checked + .slider {
+  background-color: white;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px white;
+}
+.slider:before {
+ background-color: #282e82;
+}
+.slider {
+ background-color: white;
+}
+.dark, .light{
+  display:none !important;
+}
+.white{
+  display:inline !important;
+}

@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>KALK</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet">
+  <link id="mode" href="css/light.css" rel="stylesheet">
+  <script src="js/scripts.js"></script>
+</head>
+<body onload="shrink()">
+  <div id="menuopen" onClick="menuOpen()">
+    &#11044; &#11044; &#11044;
+  </div>
+  <div id="menuclose" onClick="menuClose()">
+    &#11044; &#11044; &#11044;
+  </div>
+  <div id="menucontent">
+    <div id="textbox">
+    <h1>KALK</h1></br>
+    <p>is the true minimalists calculator, offering a well designed interface and just the right amount of additional features and hidden themes.</p></br>
+    <p>Delivered to you by:</br>
+    KONKRET Apps</p></br>
+    <p>Design and code by:</br>
+    Johannes Hassenstein</p>
+  </div>
+  </div>
+  <div id="container">
+    <div id="header">
+      <div id="ergebnis">
+        <form name="Eq" id="eq">
+          <input id="output" type="text" name="Input" Size="8" Placeholder="KALK" readonly>
+        </form>
+      </div>
+      <form name="Calc">
+        <div id="eingabe">
+          <input id="input" type="text" name="Input" Size="8" readonly>
+        </div>
+    </div>
+    <div id="tasten">
+      <ul class="mainul">
+        <li class="mainli">
+          <ul class="subul">
+            <li class="subli">
+              <div id="clear">
+                <div class="button" TYPE="button" NAME="clear" OnClick="clearAll()">
+                  <div class="label">
+                    <img src="img/delete.png" alt="clear" class="light"><img src="img/deleteG.png" alt="clear" class="dark"><img src="img/deleteW.png" alt="clear" class="white">
+                  </div>
+                </div>
+              </div>
+              <div id="modus">
+                  <div class="button" type="button" name="mode">
+                    <div class="label">
+                      <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"  OnClick="changeMode()"></span>
+                      </label>
+                    </div>
+                  </div>
+              </div>
+            </li>
+            <li class="subli"><div class="button" TYPE="button" NAME="square" OnClick="Eq.Input.value = eval(Calc.Input.value);Eq.Input.value = eval(Eq.Input.value * Eq.Input.value); shrink()"><div class="label"><img src="img/squareW.png" alt="square" class="white"><img src="img/square.png" alt="square" class="light"><img src="img/squareG.png" alt="square" class="dark"></div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="sqrt"  OnClick="Eq.Input.value = eval(Calc.Input.value); Eq.Input.value = Math.sqrt(Eq.Input.value); shrink()"><div class="label"><img src="img/rootW.png" alt="root" class="white"><img src="img/root.png" alt="root" class="light"><img src="img/rootG.png" alt="root" class="dark"></div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="plus"  OnClick="Calc.Input.value += ' + '; shrink()"><div class="label"><img src="img/plusW.png" alt="plus" class="white"><img src="img/plus.png" alt="plus" class="light"><img src="img/plusG.png" alt="plus" class="dark"></div></div></li>
+          </ul>
+        </li>
+        <li class="mainli">
+          <ul class="subul">
+            <li class="subli"><div class="button" TYPE="button" NAME="seven" OnClick="Calc.Input.value += '7'; Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">7</div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="eight" OnCLick="Calc.Input.value += '8'; Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">8</div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="nine"  OnClick="Calc.Input.value += '9'; Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">9</div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="minus" OnClick="Calc.Input.value += ' - '"><div class="label"><img src="img/minusW.png" alt="minus" class="white"><img src="img/minus.png" alt="minus" class="light"><img src="img/minusG.png" alt="minus" class="dark"></div></div></li>
+          </ul>
+        </li>
+        <li class="mainli">
+          <ul class="subul">
+            <li class="subli"><div class="button" TYPE="button" NAME="four"  OnClick="Calc.Input.value += '4'; Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">4</div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="five"  OnCLick="Calc.Input.value += '5'; Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">5</div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="six"   OnClick="satan(); Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">6</div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="times" OnClick="Calc.Input.value += ' * '; shrink()"><div class="label"><img src="img/timesW.png" alt="times" class="white"><img src="img/times.png" alt="times" class="light"><img src="img/timesG.png" alt="times" class="dark"></div></div></li>
+          </ul>
+        </li>
+        <li class="mainli">
+          <ul class="subul">
+            <li class="subli"><div class="button" TYPE="button" NAME="one" OnClick="Calc.Input.value += '1'; Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">I</div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="two" OnCLick="Calc.Input.value += '2'; Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">2</div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="three" OnClick="Calc.Input.value += '3'; Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">3</div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="div" OnClick="Calc.Input.value += ' / '; shrink()"><div class="label"><img src="img/divideW.png" alt="divide" class="white"><img src="img/divide.png" alt="divide" class="light"><img src="img/divideG.png" alt="divide" class="dark"></div></div></li>
+          </ul>
+        </li>
+        <li class="mainli">
+          <ul class="subul">
+            <li class="subli"><div class="button" TYPE="button" NAME="clear" VALUE="  .  " OnClick="Calc.Input.value += '.'; shrink()"><div class="label">.</div></div></li>
+            <li class="subli"><div class="button" TYPE="button" NAME="zero"  VALUE="  0  " OnClick="Calc.Input.value += '0'; Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">0</div></div></li>
+              <li class="subli"><div class="button" TYPE="button" NAME="bracket1" OnClick="Calc.Input.value += '('; shrink()"><div class="label">(</div></div></li>
+              <li class="subli"><div class="button" TYPE="button" NAME="bracket2" OnClick="Calc.Input.value += ')'; Eq.Input.value = eval(Calc.Input.value); shrink()"><div class="label">)</div></div></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </form>
+  </div>
+</body>
+</html>

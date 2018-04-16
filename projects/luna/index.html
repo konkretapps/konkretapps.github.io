@@ -1,0 +1,143 @@
+<html>
+<head>
+  <title>LUNA</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="js/suncalc.js"></script>
+  <script>
+    function refresh(){
+      setDate();
+      setMoon();
+    }
+    function setDate(){
+      var today = new Date();
+      var locale = "en-us";
+      var month = today.toLocaleString(locale, {month: "short"});
+      var day = today.toLocaleString(locale, {weekday: "long"});
+      var dd = today.getDate();
+      if(dd<10) {
+        dd = '0'+dd;
+      }
+      document.getElementById("monat").innerHTML = month;
+      document.getElementById("nummer").innerHTML = dd;
+      document.getElementById("tag").innerHTML = day;
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(setTimes);
+      } else {
+        alert("FAILED");
+      }
+    }
+    function setTimes(position){
+      var date = new Date();
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+      var result = SunCalc.getMoonTimes(date, lat, lng);
+      var rise = result.rise.getHours()+":"+result.set.getMinutes();
+      var set = result.set.getHours()+":"+result.set.getMinutes();
+      document.getElementById("rise").innerHTML = "&#9650; | "+rise;
+      document.getElementById("set").innerHTML = "&#9660; | "+set;
+    }
+    function setMoon(){
+      var date = new Date(2018, 04, 16);
+      var result = SunCalc.getMoonIllumination(date);
+      var phase = result.phase;
+      if(phase <= 0.1){
+        phase = "neu";
+      }
+      else if(phase <= 0.5){
+        phase = "zunehmend";
+      }
+      else if(phase <= 0.55){
+        phase = "voll";
+      }
+      else{
+        phase = "abnehmend";
+      }
+      document.getElementById("moonphase").src = "img/"+phase+".png";
+      document.getElementById("moontext").innerHTML = phase;
+    }
+    function menuOpen(){
+      document.getElementById("menuopen").style.display = "none";
+      document.getElementById("menuclose").style.display = "inline";
+      document.getElementById("menucontent").style.width = "100%";
+      document.getElementById("textbox").style.opacity = "1";
+    }
+    function menuClose(){
+      document.getElementById("menuopen").style.display = "inline";
+      document.getElementById("menuclose").style.display = "none";
+      document.getElementById("menucontent").style.width = "0%";
+      document.getElementById("textbox").style.opacity = "0";
+    }
+  </script>
+</head>
+<body onload="refresh()">
+  <div id="menuopen" onClick="menuOpen()">
+    &#11044; &#11044; &#11044;
+  </div>
+  <div id="menuclose" onClick="menuClose()">
+    &#11044; &#11044; &#11044;
+  </div>
+  <div id="menucontent">
+    <div id="textbox">
+    <h1>LUNA</h1></br>
+    <p>is the true minimalists moon phase display, offering a well designed interface and all the information you`d need about the small white hole in the night sky.</p></br>
+    <p>Calculations based on a library by:</br>
+    <a href="https://github.com/mourner/suncalc">Vladimir Agafonkin</a></p></br>
+    <p>Delivered to you by:</br>
+    KONKRET Apps</p></br>
+    <p>Design and code by:</br>
+    Johannes Hassenstein</p>
+  </div>
+  </div>
+  <div id="container">
+    <div id="header">
+      <div id="tag">
+        Dienstag
+      </div>
+      <div id="calendar">
+      </div>
+    </div>
+    <div id="main">
+      <div id="moon">
+        <div id="moonimg">
+          <img id="moonphase" src="img/moon.png" alt="moon">
+          <div id="moontext">
+            Voll
+          </div>
+        </div>
+      </div>
+      <div id="bar">
+        <div id="rise">
+          &#9650; | 15:44
+        </div>
+        <div id="set">
+          &#9660; | 04:16
+        </div>
+      </div>
+    </div>
+    <div id="sub">
+      <div id="datum">
+        <div id="subcontainer">
+        <div id="nummer">
+          20
+        </div>
+        <div id="monat">
+          Apr
+        </div>
+      </div>
+      </div>
+      <div id="infos">
+        <div id="subcontainer">
+        <ul id="infoliste">
+          <li>&#9665;&#11093; | 6</li>
+          <li>&#9664;&#11044; | 20</li>
+          <li>&#11093;&#9655; | 22</li>
+          <li>&#11044;&#9654; | 8</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

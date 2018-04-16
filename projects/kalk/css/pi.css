@@ -1,0 +1,51 @@
+#header{
+  border-bottom:  2px solid black;
+}
+#output{
+  color: black !important;
+}
+#input{
+  color: rgba(0,0,0,0.7);
+}
+.button{
+  color: black;
+}
+#container{
+  background: red;
+  animation: pi 20s infinite;
+}
+@keyframes pi{
+  0%{background:yellow;}
+  25%{background:red;}
+  50%{background:blue;}
+  75%{background:green;}
+  100%{background:yellow;}
+}
+#menuopen{
+  color: black;
+}
+#menuclose{
+  color: #f4f4f4;
+}
+#menucontent{
+  color: #f4f4f4;
+  background: black;
+}
+input:checked + .slider {
+  background-color: black;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px black;
+}
+.slider:before {
+ background-color: white;
+}
+.slider {
+ background-color: black;
+}
+.dark{
+  display:none !important;
+}
+.light{
+  display:inline !important;
+}
